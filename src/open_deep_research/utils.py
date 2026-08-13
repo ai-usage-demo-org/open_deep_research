@@ -84,7 +84,6 @@ async def tavily_search(
     # Initialize summarization model with retry logic
     model_api_key = get_api_key_for_model(configurable.summarization_model, config)
     summarization_model = init_chat_model(
-        model=configurable.summarization_model,
         max_tokens=configurable.summarization_model_max_tokens,
         api_key=model_api_key,
         tags=["langsmith:nostream"]
